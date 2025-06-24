@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>vector projects inc.</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-transform: lowercase;
+    }
+    body {
+      height: 100vh;
+      background: url('Sin2x+Cos2y_GradientField.svg') no-repeat center center;
+      background-size: cover;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 800px;
+      overflow: hidden;
+    }
+    .scene {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotate 20s infinite linear;
+    }
+    .face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: navy;
+      color: #f5f5dc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #000;
+      font-size: 0.65rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    .front  { transform: rotateY(  0deg) translateZ(100px); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+    .right  { transform: rotateY( 90deg) translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX( 90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    @keyframes rotate {
+      from { transform: rotateX(0deg) rotateY(0deg); }
+      to { transform: rotateX(360deg) rotateY(360deg); }
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="face front">
+      <div class="text">
+        <div>vector projects inc.</div>
+        <div>creative design solutions</div>
+        <div>info@vectorprojects.net</div>
+      </div>
+    </div>
+    <div class="face back"></div>
+    <div class="face right"></div>
+    <div class="face left"></div>
+    <div class="face top"></div>
+    <div class="face bottom"></div>
+  </div>
+</body>
+</html>
